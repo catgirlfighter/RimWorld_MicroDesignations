@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationConditional">
+		<success>Always</success>
+		<xpath>Defs/RecipeDef[defName = "MendSimpleApparel"]</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs</xpath>
+			<value>
+				<MicroDesignations.RecipeJobDef>
+					<workerClass>MendAndRecycle.RecipeWorkerWithJob_Mend</workerClass>
+					<jobName>Mend</jobName>
+					<defName>RecipeJobMend</defName>
+				</MicroDesignations.RecipeJobDef>
+			</value>
+		</match>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<success>Always</success>
+		<xpath>Defs/RecipeDef[defName = "RecycleApparel"]</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs</xpath>
+			<value>
+				<MicroDesignations.RecipeJobDef>
+					<workerClass>MendAndRecycle.RecipeWorkerWithJob_Recycle</workerClass>
+					<jobName>Recycle</jobName>
+					<defName>RecipeJobRecycle</defName>
+				</MicroDesignations.RecipeJobDef>
+			</value>
+		</match>
+	</Operation>
+</Patch>

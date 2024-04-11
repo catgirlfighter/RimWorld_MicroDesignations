@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<DesignationDef>
+		<defName>ButcherCorpseFleshDesignation</defName>
+		<texturePath>Designations/Slaughter</texturePath>
+		<targetType>Thing</targetType>
+		<modExtensions>
+			<li Class="MicroDesignations.DesignatorHotKey">
+				<hotKey>Designator_Deconstruct</hotKey>
+			</li>
+		</modExtensions>
+	</DesignationDef>
+	
+	<DesignationDef>
+		<defName>ButcherCorpseMechanoidDesignation</defName>
+		<texturePath>Designations/Recycle</texturePath>
+		<targetType>Thing</targetType>
+		<modExtensions>
+			<li Class="MicroDesignations.DesignatorHotKey">
+				<hotKey>Designator_Deconstruct</hotKey>
+			</li>
+		</modExtensions>
+	</DesignationDef>
+	
+	<DesignationDef>
+		<defName>CremateCorpseDesignation</defName>
+		<texturePath>Designations/Burn</texturePath>
+		<targetType>Thing</targetType>
+		<modExtensions>
+			<li Class="MicroDesignations.DesignatorHotKey">
+				<hotKey>Command_TogglePower</hotKey>
+			</li>
+		</modExtensions>
+	</DesignationDef>
+	
+	<DesignationDef>
+		<defName>BurnApparelDesignation</defName>
+		<texturePath>Designations/Burn</texturePath>
+		<targetType>Thing</targetType>
+		<modExtensions>
+			<li Class="MicroDesignations.DesignatorHotKey">
+				<hotKey>Command_TogglePower</hotKey>
+			</li>
+		</modExtensions>
+	</DesignationDef>
+	
+	<DesignationDef>
+		<defName>BurnWeaponDesignation</defName>
+		<texturePath>Designations/Burn</texturePath>
+		<targetType>Thing</targetType>
+		<modExtensions>
+			<li Class="MicroDesignations.DesignatorHotKey">
+				<hotKey>Command_TogglePower</hotKey>
+			</li>
+		</modExtensions>
+	</DesignationDef>
+	
+	<DesignationDef>
+		<defName>Make_StoneBlocksAnyDesignation</defName>
+		<texturePath>Designations/Chisel</texturePath>
+		<targetType>Thing</targetType>
+		<modExtensions>
+			<li Class="MicroDesignations.DesignatorHotKey">
+				<hotKey>Designator_Deconstruct</hotKey>
+			</li>
+		</modExtensions>
+	</DesignationDef>
+	
+	<DesignationDef>
+		<defName>ExtractMetalFromSlagDesignation</defName>
+		<texturePath>Designations/Recycle</texturePath>
+		<targetType>Thing</targetType>
+		<modExtensions>
+			<li Class="MicroDesignations.DesignatorHotKey">
+				<hotKey>Designator_Deconstruct</hotKey>
+			</li>
+		</modExtensions>
+	</DesignationDef>
+	
+	<DesignationDef>
+		<defName>SmeltWeaponDesignation</defName>
+		<texturePath>Designations/Recycle</texturePath>
+		<targetType>Thing</targetType>
+		<modExtensions>
+			<li Class="MicroDesignations.DesignatorHotKey">
+				<hotKey>Designator_Deconstruct</hotKey>
+			</li>
+		</modExtensions>
+	</DesignationDef>
+
+	<DesignationDef>
+		<defName>SmeltApparelDesignation</defName>
+		<texturePath>Designations/Recycle</texturePath>
+		<targetType>Thing</targetType>
+		<modExtensions>
+			<li Class="MicroDesignations.DesignatorHotKey">
+				<hotKey>Designator_Deconstruct</hotKey>
+			</li>
+		</modExtensions>
+	</DesignationDef>
+	
+	<DesignationDef>
+		<defName>DestroyWeaponDesignation</defName>
+		<texturePath>Designations/Burn</texturePath>
+		<targetType>Thing</targetType>
+		<modExtensions>
+			<li Class="MicroDesignations.DesignatorHotKey">
+				<hotKey>Command_TogglePower</hotKey>
+			</li>
+		</modExtensions>
+	</DesignationDef>
+
+	<DesignationDef>
+		<defName>DestroyApparelDesignation</defName>
+		<texturePath>Designations/Burn</texturePath>
+		<targetType>Thing</targetType>
+		<modExtensions>
+			<li Class="MicroDesignations.DesignatorHotKey">
+				<hotKey>Command_TogglePower</hotKey>
+			</li>
+		</modExtensions>
+	</DesignationDef>
+	
+	<DesignationDef>
+		<defName>Make_StoneBlocksSandstoneDesignation</defName>
+		<texturePath>Designations/Chisel</texturePath>
+		<targetType>Thing</targetType>
+	</DesignationDef>
+	
+	
+	<DesignationDef>
+		<defName>Make_StoneBlocksGraniteDesignation</defName>
+		<texturePath>Designations/Chisel</texturePath>
+		<targetType>Thing</targetType>
+	</DesignationDef>
+	
+	<DesignationDef>
+		<defName>Make_StoneBlocksLimestoneDesignation</defName>
+		<texturePath>Designations/Chisel</texturePath>
+		<targetType>Thing</targetType>
+	</DesignationDef>
+	
+	<DesignationDef>
+		<defName>Make_StoneBlocksSlateDesignation</defName>
+		<texturePath>Designations/Chisel</texturePath>
+		<targetType>Thing</targetType>
+	</DesignationDef>
+	
+	<DesignationDef>
+		<defName>Make_StoneBlocksMarbleDesignation</defName>
+		<texturePath>Designations/Chisel</texturePath>
+		<targetType>Thing</targetType>
+	</DesignationDef>
+	
+	<!-- Mend & Recycle mod -->
+	
+	<DesignationDef>
+		<defName>RecycleApparelDesignation</defName>
+		<texturePath>Designations/Recycle</texturePath>
+		<targetType>Thing</targetType>
+	</DesignationDef>
+	
+</Defs>
