@@ -1,4 +1,10 @@
-﻿1.1.0
+﻿1.1.2
+- added a possibility to add recipe ignores through xml, to not make designations for them;
+
+1.1.1
+- fixed a bug causing an error when trying to interrupt a task while carrying designated item in hands;
+
+1.1.0
 - 1.5? I mean, it could be.
 
 1.0.29

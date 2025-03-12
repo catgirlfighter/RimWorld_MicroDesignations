@@ -88,6 +88,7 @@
     <Compile Include="MicroWorkGiverDef.cs" />
     <Compile Include="Patches\SelectorPatches.cs" />
     <Compile Include="Patches\WorkTabPatches.cs" />
+    <Compile Include="DefExtention.cs" />
     <Compile Include="RecipeJobDef.cs" />
     <Compile Include="Patches\ReverseDesignatorDatabasePatches.cs" />
     <Compile Include="Designator_MicroRecipe.cs" />

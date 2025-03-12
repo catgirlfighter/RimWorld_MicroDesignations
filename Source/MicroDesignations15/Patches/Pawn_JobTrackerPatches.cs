@@ -31,13 +31,14 @@ namespace MicroDesignations.Patches
                 
                 if (dDef == null)
                     return;
-
-                Designation d = thing.Map.designationManager.DesignationOn(__instance.curJob.targetB.Thing, dDef);
+                
+                var manager = thing.MapHeld.designationManager;
+                Designation d = manager.DesignationOn(thing, dDef);
 
                 if (d == null)
                     return;
 
-                thing.Map.designationManager.RemoveDesignation(d);
+                manager.RemoveDesignation(d);
                 if (condition != JobCondition.Succeeded)
                 {
                     Settings.ResetSelectTick();
@@ -47,7 +48,7 @@ namespace MicroDesignations.Patches
                     if (ds == null || !ds.CanDesignateThing(thing))
                         return;
                     //
-                    thing.Map.designationManager.AddDesignation(new Designation(thing, dDef));
+                    manager.AddDesignation(new Designation(thing, dDef));
                 }
             }
         }

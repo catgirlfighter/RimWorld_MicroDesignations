@@ -29,4 +29,15 @@
 			</value>
 		</match>
 	</Operation>
+
+	<!-- example of adding ingore for recipe 
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/RecipeDef[defName="Make_StoneBlocksAny"]</xpath>
+		<value>
+			<li Class="MicroDesignations.DefExtention">
+				<Ignore>True</Ignore>
+			</li>
+		</value>
+	</Operation>
+	-->
 </Patch>

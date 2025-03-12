@@ -18,7 +18,7 @@ namespace MicroDesignations
             if (mdef == null)
                 yield break;
 
-            foreach (Designation des in pawn.Map.designationManager.SpawnedDesignationsOfDef(mdef.designationDef))
+            foreach (Designation des in pawn.MapHeld.designationManager.SpawnedDesignationsOfDef(mdef.designationDef))
             {
                 if (!des.target.HasThing)
                 {
@@ -51,7 +51,7 @@ namespace MicroDesignations
             if (mdef == null)
                 return false;
 
-            if (t.Map.designationManager.DesignationOn(t, mdef.designationDef) == null)
+            if (t.MapHeld.designationManager.DesignationOn(t, mdef.designationDef) == null)
             {
                 return false;
             }
@@ -60,7 +60,7 @@ namespace MicroDesignations
             {
                 List<Building> list = new List<Building>();
                 foreach (var user in mdef.recipeDef.AllRecipeUsers)
-                    if (t.Map.listerBuildings.AllBuildingsColonistOfDef(user).Where(
+                    if (t.MapHeld.listerBuildings.AllBuildingsColonistOfDef(user).Where(
                             x => !x.IsForbidden(pawn)
                             && pawn.CanReserve(x, 1, -1, null, forced)
                             && (x as IBillGiver) != null
@@ -86,7 +86,7 @@ namespace MicroDesignations
             List<Building> list = new List<Building>();
             foreach (var user in mdef.recipeDef.AllRecipeUsers)
             {
-                List<Building> buildings = t.Map.listerBuildings.AllBuildingsColonistOfDef(user).Where(
+                List<Building> buildings = t.MapHeld.listerBuildings.AllBuildingsColonistOfDef(user).Where(
                     x => !x.IsForbidden(pawn) && pawn.CanReserve(x, 1, -1, null, forced) 
                     && (x as IBillGiver) != null && (x as IBillGiver).CurrentlyUsableForBills()
                     && pawn.CanReach(x, PathEndMode.InteractionCell, Danger.Deadly)).ToList();
@@ -120,9 +120,11 @@ namespace MicroDesignations
                 return job;
             }
 
-            job = new Job(mdef.jobDef, building);
-            job.targetQueueB = new List<LocalTargetInfo>(1);
-            job.countQueue = new List<int>(1);
+            job = new Job(mdef.jobDef, building)
+            {
+                targetQueueB = new List<LocalTargetInfo>(1),
+                countQueue = new List<int>(1)
+            };
             job.targetQueueB.Add(t);
             job.countQueue.Add(1);
             job.haulMode = HaulMode.ToCellNonStorage;

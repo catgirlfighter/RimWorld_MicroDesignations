@@ -26,7 +26,8 @@ namespace MicroDesignations
             List<WorkGiverDef> gList = DefDatabase<WorkGiverDef>.AllDefsListForReading;
             UnityEngine.Material mat = DesignationDefOf.Uninstall.iconMat;
 
-            foreach (var rec in list.Where(x => x.AllRecipeUsers?.OfType<BuildableDef>().Any() == true
+            foreach (var rec in list.Where(x => x.GetModExtension<DefExtention>()?.Ignore != true
+                && x.AllRecipeUsers?.OfType<BuildableDef>().Any() == true
                 && x.ingredients?.Count() == 1
                 && x.ingredients[0]?.filter?.AnyAllowedDef?.stackLimit < 2
                 && x.fixedIngredientFilter?.AllowedThingDefs != null))
@@ -59,8 +60,7 @@ namespace MicroDesignations
                     }
 
                     foreach (var def in rec.fixedIngredientFilter.AllowedThingDefs)
-                        if (def.comps != null)
-                            def.comps.Add(new CompProperties_ApplicableDesignation() { designationDef = dDef });
+                        def.comps?.Add(new CompProperties_ApplicableDesignation() { designationDef = dDef });
                     string wgname = $"{wGiverDef.defName}_{rec.defName}_DesignationWorkGiver";
 
                     WorkGiverDef wgDef = null;
@@ -74,12 +74,8 @@ namespace MicroDesignations
 
                         if (wGiverDef.giverClass != typeof(WorkGiver_DoBill))
                         {
-                            RecipeJobDef rj = DefDatabase<RecipeJobDef>.AllDefsListForReading.FirstOrDefault(x => x.defName == rec.defName);
-                            if (rj == null)
-                            {
-                                rj = DefDatabase<RecipeJobDef>.AllDefsListForReading.FirstOrDefault(x => x.workerClass == rec.workerClass);
-                            }
-
+                            RecipeJobDef rj = DefDatabase<RecipeJobDef>.AllDefsListForReading.FirstOrDefault(x => x.defName == rec.defName) 
+                                ?? DefDatabase<RecipeJobDef>.AllDefsListForReading.FirstOrDefault(x => x.workerClass == rec.workerClass);
                             if (rj == null)
                             {
                                 Log.Message($"Couldn't find a proper RecipeJobDef for redefined DoBill task {wGiverDef.defName}");
