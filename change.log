@@ -1,4 +1,7 @@
-﻿1.1.2
+﻿1.2.0
+- 1.6;
+
+1.1.2
 - added a possibility to add recipe ignores through xml, to not make designations for them;
 
 1.1.1
